@@ -1,0 +1,203 @@
+<template name="layout">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Mr. Montir Rungkut" src="images/mr-montir-logo.png" width="20em" height="20em">
+                </a>
+                {{> burgerMenuIcon}}
+                <a class="navbar-brand" href="{{pathFor 'homepage'}}">Mr. Montir Rungkut</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="scheduleNavBar"><a href="{{pathFor 'schedule'}}">Schedule Service</a></li>
+                    <li id="onthegoNavBar"><a href="{{pathFor 'onthego'}}">On-the-go Service</a></li>
+                    <li id="pickupNavBar"><a href="{{pathFor 'pickup'}}">Pick-up Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {{> yield}}
+</template>
+
+<template name="burgerMenuIcon">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</template>
+
+<template name="homepage">
+    <div class="container text-center">
+        <a href="{{pathFor 'schedule'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/reserve-icon.png" width="100" height="100" class="img-thumbnail"><h3>Schedule Service</h3></a>
+        <a href="{{pathFor 'onthego'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/on-the-go-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>On-the-go Service</h3></a>
+        <a href="{{pathFor 'pickup'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/pick-up-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>Pick-up Service</h3></a>
+    </div>
+</template>
+
+<template name="headline">
+    <div class="container"><div class="well well-sm"><h3 class="text-center"><strong>{{text}}</strong></h3></div></div>
+</template>
+
+<template name="schedule">
+    {{>headline text="Schedule an service on our workshop"}}
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Siti Nurhaliza">
+            </div>
+            <div class="form-group">
+                <label for="phone">Handphone</label>
+                <input type="tel" class="form-control" id="phone" placeholder="08100055577">
+            </div>
+            <div class="form-group">
+                <label for="date">Tanggal</label>
+                <input type="date" class="form-control" id="date" min="2015-01-01" max="2020-12-31">
+            </div>
+            <div class="form-group">
+                <label for="time">Jam</label>
+                <input type="time" class="form-control" id="time" min="08:00" max="17:00">
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+        &nbsp;
+    </div>
+</template>
+
+
+
+<template name="onthego">
+    {{>headline text="On-the-go Service"}}
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <strong>Butuh servis apa?</strong>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Ganti Oli</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Ganti Ban</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Ganti Rem Cakram</label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" value="">Servis Ringan</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Siti Nurhaliza">
+            </div>
+            <div class="form-group">
+                <label for="bikeType">Jenis Sepeda Montor</label>
+                <select class="form-control" id="bikeType">
+                    <option>Kamen Rider</option>
+                    <option>Flinstone's Bike</option>
+                    <option>Cloud's Motorbike</option>
+                    <option>Hover Board</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Handphone</label>
+                <input type="tel" class="form-control" id="phone" placeholder="08100055577">
+            </div>
+            <div class="form-group">
+                <label for="address">Mau diservis di mana?</label>
+                <textarea rows="2" class="form-control" id="address" placeholder="Jl. Raya Rungkut Tengah No.74
+Surabaya"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Tanggal</label>
+                <input type="date" class="form-control" id="date" min="2015-01-01" max="2020-12-31">
+            </div>
+            <div class="form-group">
+                <label for="time">Jam</label>
+                <input type="time" class="form-control" id="time" min="08:00" max="17:00">
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+        &nbsp;
+    </div>
+</template>
+
+<template name="pickup">
+    {{>headline text="Pick-up Service"}}
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Siti Nurhaliza">
+            </div>
+            <div class="form-group">
+                <label for="phone">Handphone</label>
+                <input type="tel" class="form-control" id="phone" placeholder="08100055577">
+            </div>
+            <div class="form-group">
+                <label for="address">Mau dipick-up di mana?</label>
+                <textarea rows="2" class="form-control" id="address" placeholder="Jl. Raya Rungkut Tengah No.74
+Surabaya"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Tanggal</label>
+                <input type="date" class="form-control" id="date" min="2015-01-01" max="2020-12-31">
+            </div>
+            <div class="form-group">
+                <label for="time">Jam</label>
+                <input type="time" class="form-control" id="time" min="08:00" max="17:00">
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+        &nbsp;
+    </div>
+</template>
+
+<template name="success">
+    <div class="container">
+        Success!
+    </div>
+</template>
+
+<template name="admin">
+    <div class="container">
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th>_id</th>
+                    <th>Type</th>
+                    <th>requestDateTime</th>
+                    <th>name</th>
+                    <th>bikeType</th>
+                    <th>phone</th>
+                    <th>address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                    {{> order}}
+                {{else}}
+                    <tr><td>Loh, jek kosong</td><td></td><td></td><td></td></tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<template name="order">
+    <tr>
+        <td>{{_id}}</td>
+        <td>{{type}}</td>
+        <td>{{requestDateTime}}</td>
+        <td>{{name}}</td>
+        <td>{{bikeType}}</td>
+        <td>{{phone}}</td>
+        <td>{{address}}</td>
+    </tr>
+</template>
