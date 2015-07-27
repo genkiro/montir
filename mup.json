@@ -2,7 +2,7 @@
   // Server authentication info
   "servers": [
     {
-      "host": "128.199.105.196",
+      "host": "128.199.74.251",
       "username": "root",
       "password": "testpassword1"
       // or pem file (ssh based authentication)

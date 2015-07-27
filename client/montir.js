@@ -35,12 +35,19 @@ Template.onthego.events({
     var date = $('#date').val();
     var time = $('#time').val();
 
+    var services = [];
+
+    $("input:checked").each(function(i, el) {
+      services.push(el.value);
+    });
+
     Orders.insert({
       type: 'ON_THE_GO',
       name: name,
       bikeType: bikeType,
       phone: phone,
       address: address,
+      services: services,
       requestDateTime: new Date(date + 'T' + time + ':00')
     }, function(err, result) {
       if (err) {
