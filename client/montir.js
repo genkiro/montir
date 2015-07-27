@@ -13,7 +13,7 @@ Template.schedule.events({
       type: 'ON_OUR_WORKSHOP',
       name: name,
       phone: phone,
-      requestDateTime: new Date(date + 'T' + time + ':00')
+      requestDateTime: moment(date + ' ' + time).toDate()
     }, function(err, result) {
       if (err) {
         alertify.error("err: " + err);
@@ -48,7 +48,7 @@ Template.onthego.events({
       phone: phone,
       address: address,
       services: services,
-      requestDateTime: new Date(date + 'T' + time + ':00')
+      requestDateTime: moment(date + ' ' + time).toDate()
     }, function(err, result) {
       if (err) {
         alertify.error("err: " + err);
@@ -74,7 +74,7 @@ Template.pickup.events({
       name: name,
       phone: phone,
       address:address,
-      requestDateTime: new Date(date + 'T' + time + ':00')
+      requestDateTime: moment(date + ' ' + time).toDate()
     }, function(err, result) {
       if (err) {
         alertify.error("err: " + err);
