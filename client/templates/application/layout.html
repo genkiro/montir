@@ -46,7 +46,7 @@
 </template>
 
 <template name="schedule">
-    {{>headline text="Schedule an service on our workshop"}}
+    {{>headline text="Schedule a service on our workshop"}}
     <div class="container">
         <form>
             <div class="form-group">
@@ -184,7 +184,16 @@ Surabaya"></textarea>
                 {{#each orders}}
                     {{> order}}
                 {{else}}
-                    <tr><td>Loh, jek kosong</td><td></td><td></td><td></td></tr>
+                    <tr>
+                        <td>Loh, jek kosong</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 {{/each}}
             </tbody>
         </table>
