@@ -1,5 +1,13 @@
 console.log('client file');
 
+var handleSubmit = function(err, result) {
+  if (err) {
+    alertify.error("err: " + err);
+  } else {
+    Router.go('success', {_id: result});
+  }
+};
+
 Template.schedule.events({
   'submit form': function (e) {
     e.preventDefault();
@@ -10,17 +18,11 @@ Template.schedule.events({
     var time = $('#time').val();
 
     Orders.insert({
-      type: 'ON_OUR_WORKSHOP',
+      type: 'SCHEDULE',
       name: name,
       phone: phone,
       requestDateTime: moment(date + ' ' + time).toDate()
-    }, function(err, result) {
-      if (err) {
-        alertify.error("err: " + err);
-      } else {
-        Router.go('success');
-      }
-    });
+    }, handleSubmit);
   }
 });
 
@@ -49,13 +51,7 @@ Template.onthego.events({
       address: address,
       services: services,
       requestDateTime: moment(date + ' ' + time).toDate()
-    }, function(err, result) {
-      if (err) {
-        alertify.error("err: " + err);
-      } else {
-        Router.go('success');
-      }
-    });
+    }, handleSubmit);
   }
 });
 
@@ -75,13 +71,7 @@ Template.pickup.events({
       phone: phone,
       address:address,
       requestDateTime: moment(date + ' ' + time).toDate()
-    }, function(err, result) {
-      if (err) {
-        alertify.error("err: " + err);
-      } else {
-        Router.go('success');
-      }
-    });
+    }, handleSubmit);
   }
 });
 

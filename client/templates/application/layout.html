@@ -155,10 +155,52 @@
     </div>
 </template>
 
-<template name="success">
+<template name="success_schedule">
     <div class="container">
-        Success!
+        <p>Terima kasih <strong>{{name}}</strong>,</p>
+        <p>Permintaan reservasi dari Anda telah tercatat untuk hari <strong>{{date}}</strong> jam <strong>{{time}}</strong> telah tercatat. Kami akan segera mengkonfirmasi Anda di nomer handphone: <strong>{{phone}}</strong>.</p>
+        <p>Nomer order Anda adalah: <strong>{{_id}}</strong></p>
+        <p>- Tim Mr. Montir Rungkut.</p>
+        <a href="{{pathFor 'homepage'}}" class="btn btn-danger btn-lg" role="button">Kembali ke halaman utama</a>
     </div>
+</template>
+
+<template name="success_on_the_go">
+    <div class="container">
+        <p>Terima kasih <strong>{{name}}</strong>,</p>
+        <p>Permintaan panggilan montir dari Anda telah tercatat untuk hari <strong>{{date}}</strong> jam <strong>{{time}}</strong> di:</p>
+        <p><strong>{{address}}</strong></p>
+        <p>Kami akan bersiap untuk melayani <strong>{{bikeType}}</strong> Anda dengan servis:</p>
+        <p>
+            <strong>
+                <ul>
+                    {{#each services}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </strong>
+        </p>
+        <p>Kami akan segera mengkonfirmasi Anda di nomer handphone: <strong>{{phone}}</strong>.</p>
+        <p>Nomer order Anda adalah: <strong>{{_id}}</strong></p>
+        <p>- Tim Mr. Montir Rungkut.</p>
+        <a href="{{pathFor 'homepage'}}" class="btn btn-danger btn-lg" role="button">Kembali ke halaman utama</a>
+    </div>
+</template>
+
+<template name="success_pickup">
+    <div class="container">
+        <p>Terima kasih <strong>{{name}}</strong>,</p>
+        <p>Permintaan servis dengan pengambilan dari Anda telah tercatat untuk hari <strong>{{date}}</strong> jam <strong>{{time}}</strong> di:</p>
+        <p><strong>{{address}}</strong></p>
+        <p>Kami akan segera mengkonfirmasi Anda di nomer handphone: <strong>{{phone}}</strong>.</p>
+        <p>Nomer order Anda adalah: <strong>{{_id}}</strong></p>
+        <p>- Tim Mr. Montir Rungkut.</p>
+        <a href="{{pathFor 'homepage'}}" class="btn btn-danger btn-lg" role="button">Kembali ke halaman utama</a>
+    </div>
+</template>
+
+<template name="success_general">
+    <div class="container">Sukses!</div>
 </template>
 
 <template name="admin">
