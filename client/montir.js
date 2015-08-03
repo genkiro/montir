@@ -2,7 +2,9 @@ console.log('client file');
 
 var handleSubmit = function(err, result) {
   if (err) {
-    alertify.error("err: " + err);
+    var msg = "err: " + err;
+    console.log(msg);
+    alertify.error(msg);
   } else {
     Router.go('success', {_id: result});
   }
@@ -80,3 +82,7 @@ Template.admin.helpers({
     return Orders.find({});
   }
 });
+
+Template.selectBikeType.rendered = function () {
+  $('#bikeType').selectize({ sortField: 'text' });
+};
