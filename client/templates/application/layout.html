@@ -211,20 +211,24 @@
                 </tr>
             </thead>
             <tbody>
-                {{#each orders}}
-                    {{> order}}
+                {{#if Template.subscriptionsReady}}
+                    {{#each orders}}
+                        {{> order}}
+                    {{else}}
+                        <tr>
+                            <td>Loh, jek kosong</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    {{/each}}
                 {{else}}
-                    <tr>
-                        <td>Loh, jek kosong</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                {{/each}}
+                    <h1>Loading...</h1>
+                {{/if}}
             </tbody>
         </table>
     </div>
