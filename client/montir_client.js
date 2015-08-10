@@ -1,5 +1,17 @@
 console.log('client file');
 
+// log sent messages
+/*var _send = Meteor.connection._send;
+Meteor.connection._send = function (obj) {
+  console.log("send", obj);
+  _send.call(this, obj);
+};*/
+
+// log received messages
+/*Meteor.connection._stream.on('message', function (message) {
+  console.log("receive", JSON.parse(message));
+});*/
+
 var handleSubmit = function(err, result) {
   if (err) {
     var msg = "err: " + err;
@@ -19,12 +31,14 @@ Template.schedule.events({
     var date = $('#date').val();
     var time = $('#time').val();
 
-    Orders.insert({
+    var obj = {
       type: 'SCHEDULE',
       name: name,
       phone: phone,
       requestDateTime: moment(date + ' ' + time).toDate()
-    }, handleSubmit);
+    };
+
+    Orders.insert(obj, handleSubmit);
   }
 });
 
