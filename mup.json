@@ -2,9 +2,8 @@
   // Server authentication info
   "servers": [
     {
-      "host": "128.199.74.251", // montir
+      "host": "128.199.66.149", // montir
       //"host": "128.199.205.207", // montir3
-      //"host": "128.199.66.149", // montir4
 
       "username": "root",
       "password": "testpassword1",
