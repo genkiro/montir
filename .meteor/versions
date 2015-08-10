@@ -55,6 +55,7 @@ routepolicy@1.0.5
 rzymek:moment-locale-id@2.9.0
 sacha:spin@2.3.1
 session@1.1.0
+silentcicero:string.js@0.0.1
 spacebars@1.0.6
 spacebars-compiler@1.0.6
 templating@1.1.1

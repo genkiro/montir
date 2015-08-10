@@ -163,15 +163,11 @@
         <p>Permintaan panggilan montir dari Anda telah tercatat untuk hari <strong>{{date}}</strong> jam <strong>{{time}}</strong> di:</p>
         <p><strong>{{address}}</strong></p>
         <p>Kami akan bersiap untuk melayani <strong>{{bikeType}}</strong> Anda dengan servis:</p>
-        <p>
-            <strong>
-                <ul>
-                    {{#each services}}
-                        <li>{{this}}</li>
-                    {{/each}}
-                </ul>
-            </strong>
-        </p>
+        <p><strong><ul>
+            {{#each services}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul></strong></p>
         <p>Kami akan segera mengkonfirmasi Anda di nomer handphone: <strong>{{phone}}</strong>.</p>
         <p>Nomer order Anda adalah: <strong>{{_id}}</strong></p>
         <p>- Tim Mr. Montir Rungkut.</p>
