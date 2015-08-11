@@ -1,5 +1,5 @@
 <template name="layout">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="margin-bottom: 0;"> <!--this styling is only for the carousel to stick to the top-->
         <div class="container-fluid">
 
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li id="scheduleNavBar"><a href="{{pathFor 'schedule'}}">Jadwal servis di bengkel</a></li>
-                    <li id="onthegoNavBar"><a href="{{pathFor 'onthego'}}">Panggil montir</a></li>
+                    <!--<li id="onthegoNavBar"><a href="{{pathFor 'onthego'}}">Panggil montir</a></li>-->
                     <li id="pickupNavBar"><a href="{{pathFor 'pickup'}}">Diambil untuk diservis</a></li>
                 </ul>
             </div>
@@ -34,9 +34,38 @@
 </template>
 
 <template name="homepage">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators, not yet needed since there's only one pic -->
+        <!--<ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>-->
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/august-banner.jpg" alt="Pika Pikachu">
+                <div class="carousel-caption">
+                    <!-- Here, we can put some white text on top of the pic -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls, not needed yet since there's only one pic -->
+        <!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>-->
+    </div>
+    &nbsp;
     <div class="container text-center">
         <a href="{{pathFor 'schedule'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/reserve-icon.png" width="100" height="100" class="img-thumbnail"><h3>Jadwal servis di bengkel</h3></a>
-        <a href="{{pathFor 'onthego'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/on-the-go-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>Panggil montir</h3></a>
+        <!--<a href="{{pathFor 'onthego'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/on-the-go-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>Panggil montir</h3></a>-->
         <a href="{{pathFor 'pickup'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/pick-up-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>Diambil untuk diservis</h3></a>
     </div>
 </template>

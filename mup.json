@@ -14,6 +14,7 @@
       "env": {
         //"DDP_DEFAULT_CONNECTION_UR": "http://localhost:3030",
         //"DISABLE_WEBSOCKETS": 1
+        "FORCE_SSL": 1
       }
     }
   ],
