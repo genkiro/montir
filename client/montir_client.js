@@ -22,6 +22,14 @@ var handleSubmit = function(err, result) {
   }
 };
 
+Template.homepage.rendered = function () {
+  $('nav').css('margin-bottom', 0);
+};
+
+Template.homepage.destroyed = function () {
+  $('nav').css('margin-bottom', 20);
+};
+
 Template.schedule.events({
   'submit form': function (e) {
     e.preventDefault();
