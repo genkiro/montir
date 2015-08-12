@@ -32,6 +32,7 @@ Template.schedule.events({
     var time = $('#time').val();
 
     var obj = {
+      _id: idForOrders(),
       type: 'SCHEDULE',
       name: name,
       phone: phone,
@@ -60,6 +61,7 @@ Template.onthego.events({
     });
 
     Orders.insert({
+      _id: idForOrders(),
       type: 'ON_THE_GO',
       name: name,
       bikeType: bikeType,
@@ -82,6 +84,7 @@ Template.pickup.events({
     var time = $('#time').val();
 
     Orders.insert({
+      _id: idForOrders(),
       type: 'PICKUP',
       name: name,
       phone: phone,
