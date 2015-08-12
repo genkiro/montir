@@ -44,8 +44,14 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="images/august-banner.jpg" alt="Pika Pikachu">
+            <div class="item active visible-xs-block visible-sm-block">
+                <a href="#main-menu"><img src="images/august-banner-small.jpg" alt="Diskon 45% untuk servis di Agustus"></a>
+                <div class="carousel-caption">
+                    <!-- Here, we can put some white text on top of the pic -->
+                </div>
+            </div>
+            <div class="item active visible-md-block visible-lg-block">
+                <a href="#main-menu"><img src="images/august-banner.jpg" alt="Diskon 45% untuk servis di Agustus"></a>
                 <div class="carousel-caption">
                     <!-- Here, we can put some white text on top of the pic -->
                 </div>
@@ -63,7 +69,7 @@
         </a>-->
     </div>
     &nbsp;
-    <div class="container text-center">
+    <div id="main-menu" class="container text-center">
         <a href="{{pathFor 'schedule'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/reserve-icon.png" width="100" height="100" class="img-thumbnail"><h3>Jadwal servis di bengkel</h3></a>
         <!--<a href="{{pathFor 'onthego'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/on-the-go-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>Panggil montir</h3></a>-->
         <a href="{{pathFor 'pickup'}}" class="btn btn-default btn-lg" role="button" style="margin-bottom: 0.5em;"><img src="images/pick-up-service-icon.png" width="100" height="100" class="img-thumbnail"><h3>Diambil untuk diservis</h3></a>
